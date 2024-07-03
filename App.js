@@ -1,14 +1,16 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Navigation from './navigation';
+import Navigation from './src/utils/navigation.js';
+import { CheckoutProvider } from './src/utils/Checkoutcontext.js';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <CheckoutProvider>
+      <NavigationContainer>
       <Navigation />
     </NavigationContainer>
+    </CheckoutProvider>
+    
   );
 }
 
